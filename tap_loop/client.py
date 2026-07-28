@@ -16,7 +16,6 @@ class LoopStream(RESTStream):
     records_jsonpath = "$.data[*]"
     next_page_token_jsonpath = None
     page_size = 100
-    request_delay_seconds = 0.0
     paginate = True
 
     @override
