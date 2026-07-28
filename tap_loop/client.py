@@ -17,6 +17,7 @@ class LoopStream(RESTStream):
     next_page_token_jsonpath = None
     page_size = 100
     request_delay_seconds = 0.0
+    paginate = True
 
     @override
     @property
@@ -44,6 +45,8 @@ class LoopStream(RESTStream):
         response: requests.Response,
         previous_token: Any | None,
     ) -> Any | None:
+        if not self.paginate:
+            return None
         if response.json().get("pageInfo", {}).get("hasNextPage"):
             return (previous_token or 1) + 1
         return None

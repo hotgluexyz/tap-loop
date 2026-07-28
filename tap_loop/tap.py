@@ -6,12 +6,18 @@ from hotglue_singer_sdk import Stream, Tap
 from hotglue_singer_sdk import typing as th
 from typing_extensions import override
 
-from tap_loop.streams import CustomersStream, ProductsStream, SubscriptionsStream
+from tap_loop.streams import (
+    CustomersStream,
+    ProductsStream,
+    SubscriptionsDetailsStream,
+    SubscriptionsStream,
+)
 
 STREAM_TYPES = [
     CustomersStream,
     ProductsStream,
     SubscriptionsStream,
+    SubscriptionsDetailsStream,
 ]
 
 
