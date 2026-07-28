@@ -73,7 +73,7 @@ class SubscriptionsStream(LoopStream):
 class SubscriptionsDetailsStream(LoopStream):
     """Full subscription details for a single subscription contract."""
 
-    name = "subscriptions_details"
+    name = "subscription_details"
     parent_stream_type = SubscriptionsStream
     path = "/subscription/{subscription_id}"
     records_jsonpath = "$.data"
