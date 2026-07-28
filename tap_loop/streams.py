@@ -7,7 +7,17 @@ from typing import Any
 from typing_extensions import override
 
 from tap_loop.client import LoopStream
-from tap_loop.schemas import ATTRIBUTE, DELIVERY_METHOD, BILLING_POLICY, DELIVERY_POLICY, SHIPPING_ADDRESS, SUBSCRIPTION_LINE, SUBSCRIPTION_CUSTOMER, BILLING_ADDRESS, PAYMENT_METHOD
+from tap_loop.schemas import (
+    ATTRIBUTE,
+    DELIVERY_METHOD,
+    BILLING_POLICY,
+    DELIVERY_POLICY,
+    SHIPPING_ADDRESS,
+    SUBSCRIPTION_LINE,
+    SUBSCRIPTION_CUSTOMER,
+    BILLING_ADDRESS,
+    PAYMENT_METHOD,
+)
 from hotglue_singer_sdk import typing as th
 
 
