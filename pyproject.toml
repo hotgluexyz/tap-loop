@@ -44,7 +44,7 @@ commands = [ [ "pytest", { replace = "posargs", default = [ "tests" ], extend = 
 [tool.tox.env.lint]
 description = "run ruff linter and formatter check"
 skip_install = true
-deps = ["ruff>=0.15"]
+deps = ["ruff==0.15.12"]
 commands = [
     ["ruff", "check", "."],
     ["ruff", "format", "--check", "."],
