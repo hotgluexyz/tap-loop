@@ -14,7 +14,7 @@ A [Singer](https://www.singer.io/) tap that extracts data from **Loop Subscripti
 | Stream | Path | Primary key | Replication key | Rate limit |
 | ------ | ---- | ----------- | --------------- | ---------- |
 | `subscriptions` | `GET /admin/2023-10/subscription` | `id` | `updatedAt` (via `updatedAtStartEpoch`) | 2 req / 3 sec |
-| `subscriptions_details` | `GET /admin/2023-10/subscription/{subscriptionId}` | `id` | full refresh (child of `subscriptions`) | 10 req / sec (global pool) |
+| `subscription_details` | `GET /admin/2023-10/subscription/{subscriptionId}` | `id` | full refresh (child of `subscriptions`) | 10 req / sec (global pool) |
 | `customers` | `GET /admin/2023-10/customer` | `id` | full table | 1 req / sec |
 | `products` | `GET /admin/2023-10/product?type=ALL` | `shopifyId` | full table | 6 req / sec |
 
