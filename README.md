@@ -14,6 +14,7 @@ A [Singer](https://www.singer.io/) tap that extracts data from **Loop Subscripti
 | Stream | Path | Primary key | Replication key | Rate limit |
 | ------ | ---- | ----------- | --------------- | ---------- |
 | `subscriptions` | `GET /admin/2023-10/subscription` | `id` | `updatedAt` (via `updatedAtStartEpoch`) | 2 req / 3 sec |
+| `subscription_details` | `GET /admin/2023-10/subscription/{subscriptionId}` | `id` | full refresh (child of `subscriptions`) | 10 req / sec (global pool) |
 | `customers` | `GET /admin/2023-10/customer` | `id` | full table | 1 req / sec |
 | `products` | `GET /admin/2023-10/product?type=ALL` | `shopifyId` | full table | 6 req / sec |
 
@@ -86,6 +87,7 @@ tap-loop --config .secrets/config.json --catalog .secrets/catalog-selected.json
 - [Loop Admin API reference](https://developer.loopwork.co/reference)
 - [Pagination](https://developer.loopwork.co/reference/pagination)
 - [Read all subscriptions](https://developer.loopwork.co/reference/read-all-subscriptions)
+- [Read subscription details](https://developer.loopwork.co/reference/read-subscription-details)
 - [Read all customers](https://developer.loopwork.co/reference/read-all-customers)
 - [List products](https://developer.loopwork.co/reference/list-products)
 
